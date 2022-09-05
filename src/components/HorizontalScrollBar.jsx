@@ -16,10 +16,10 @@ const LeftArrow = () => {
 }
 
 const RightArrow = () => {
-  const { scrollPrev } = React.useContext(VisibilityContext);
+  const { scrollNext } = React.useContext(VisibilityContext);
 
   return (
-    <Typography onClick={() => scrollPrev()} className="left-arrow">
+    <Typography onClick={() => scrollNext()} className="left-arrow">
       <img src={RightArrowIcon} alt="right-arrow" />
     </Typography>
   )
