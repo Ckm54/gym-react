@@ -3,12 +3,11 @@ import React from 'react'
 import HorizontalScrollBar from './HorizontalScrollBar'
 import Loader from './Loader'
 
-const SimilarExercises = ({targetMuscleExercises, equipmentExercises}) => {
-
-  console.log({targetMuscleExercises})
+const SimilarExercises = ({equipment, muscle, targetMuscleExercises, equipmentExercises}) => {
+  console.log({targetMuscleExercises});
   return (
     <Box sx={{mt: {lg: '100px', xs: '0'}}}>
-      <Typography variant="h3" mb={5}>Exercises that target the same muscle group</Typography>
+      <Typography variant="h3" mb={5}>Similar <span style={{color: "#ff2625", textTransform: 'capitalize'}}>{muscle}</span> Exercises</Typography>
       <Stack direction="row" sx={{p: '2', position: 'relative'}}>
         {targetMuscleExercises.length ?
         <HorizontalScrollBar data={targetMuscleExercises} />
@@ -17,7 +16,7 @@ const SimilarExercises = ({targetMuscleExercises, equipmentExercises}) => {
         }
       </Stack>
 
-      <Typography variant="h3" mb={5}>Exercises that use the same equipment</Typography>
+      <Typography variant="h3" mb={5}>Similar <span style={{color: "#ff2625", textTransform: 'capitalize'}}>{equipment}</span> Exercises</Typography>
       <Stack direction="row" sx={{p: '2', position: 'relative'}}>
         {equipmentExercises.length ?
         <HorizontalScrollBar data={equipmentExercises} />
